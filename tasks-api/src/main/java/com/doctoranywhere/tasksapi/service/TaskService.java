@@ -15,8 +15,6 @@ public class TaskService {
 
     public TaskService() {
         tasks = new HashMap<>();
-        Task task1 = new Task((long) 1, "title", "description", false);
-        tasks.put((long) 1, task1);
     }
 
     // Get a single task by ID
