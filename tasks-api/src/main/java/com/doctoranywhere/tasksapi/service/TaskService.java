@@ -11,10 +11,12 @@ import com.doctoranywhere.tasksapi.api.model.Task;
 @Service
 public class TaskService {
 
-    private List<Task> tasks;
+    private ArrayList<Task> tasks;
 
     public TaskService() {
         tasks = new ArrayList<>();
+        Task task1 = new Task((long) 1, "title", "description", false);
+        tasks.add(task1);
     }
 
     // Get a single task by ID
@@ -27,6 +29,21 @@ public class TaskService {
         }
         // task not found
         return Optional.empty();
+    }
+
+    public Optional<ArrayList<Task>> getTasks() {
+        // Optional<ArrayList<Task>> optional = Optional.empty();
+        if (tasks.size() == 0) {
+            return Optional.empty();
+        }
+        ArrayList<Task> tasksCopy = new ArrayList<>(tasks);
+        return Optional.of(tasksCopy);
+    }
+
+    public Task createTask(Long id, String title, String description, Boolean completed) {
+        Task newTask = new Task(id, title, description, completed);
+        tasks.add(newTask);
+        return newTask;
     }
 
 }
