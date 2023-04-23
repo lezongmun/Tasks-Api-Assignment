@@ -35,7 +35,7 @@ The following endpoints are provided:
 <br>
 
 #### GET/tasks
-##### Request:
+
     No parameters required  
 ##### Example:    
     localhost:8080/tasks
@@ -44,7 +44,7 @@ The following endpoints are provided:
 <br>
 
 #### POST /tasks
-##### Request:
+##### Query Parameters:
 `Long id`: unique ID of the task    
 `String title`: Title of the task   
 `String description`: Description of the task   
@@ -58,7 +58,7 @@ localhost:8080/tasks?id=4&title=sampleTitle&description=sampleDescription&comple
 <br>
 
 #### GET /tasks/{id}
-##### Request:
+##### Path Parameters:
 `Long id`: unique ID of the task
 ##### Example:
 ```
@@ -69,8 +69,9 @@ localhost:8080/tasks/1
 <br>
 
 #### PUT /tasks/{id}
-##### Request:
+##### Path Parameters:
 `Long id`: unique ID of the task    
+##### Query Parameters:
 `String title` (optional): Title of the task    
 `String description` (optional): Description of the task     
 `Boolean completed` (optional): Indication of whether the task has been completed  
@@ -83,7 +84,7 @@ localhost:8080/tasks/3?title=changedTitle&completed=true
 <br>
 
 #### DELETE /tasks/{id}
-##### Request:
+##### Path Parameters:
 `Long id`: unique ID of the task    
 ##### Example:
 ```
