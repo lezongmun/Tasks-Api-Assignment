@@ -1,5 +1,7 @@
 package com.doctoranywhere.tasksapi.api.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,13 +15,20 @@ public class TaskController {
 
     private TaskService taskService;
 
-    @Autowired // auto injection of an instance of TaskService into constructor
+    // auto injection of an instance of TaskService into constructor
+    @Autowired
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
+    // Get a single task by ID
     @GetMapping
     public Task getTask(@RequestParam Long id) {
-        return taskService.getTask(id);
+        Optional<Task> task = taskService.getTask(id);
+        if (task.isPresent()) {
+            return (Task) task.get();
+        }
+        return null;
+
     }
 }
