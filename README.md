@@ -18,7 +18,7 @@ mvn clean install
  java -jar target/tasks-api-0.0.1-SNAPSHOT.jar
  ```
 
-- Use Postman or web browser to try the endpoints
+- Use Postman or a web browser to call the endpoints through `localhost:8080`
 
 
 ## Usage
