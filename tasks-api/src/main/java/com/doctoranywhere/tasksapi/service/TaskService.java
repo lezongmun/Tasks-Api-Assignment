@@ -2,7 +2,6 @@ package com.doctoranywhere.tasksapi.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;

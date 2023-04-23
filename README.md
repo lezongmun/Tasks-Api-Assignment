@@ -1,4 +1,4 @@
-# Tasks API Project
+# Tasks API Assignment
 
 ## Prerequisites
 Before you begin, ensure that you have met the following requirements:
